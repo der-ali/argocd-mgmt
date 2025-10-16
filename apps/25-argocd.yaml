@@ -1,0 +1,28 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "25"
+spec:
+  project: default
+  sources:
+    - repoURL: https://argoproj.github.io/argo-helm
+      chart: argo-cd
+      targetRevision: 8.2.5
+      helm:
+        valueFiles:
+          - $values/values/argocd.yaml
+    - repoURL: argocd-mgmt
+      targetRevision: HEAD
+      ref: values
+    - repoURL: argocd-mgmt
+      path: manifests/argocd/
+  destination:
+    name: in-cluster
+    namespace: argocd
+  syncPolicy:
+    automated: {}
+

@@ -1,0 +1,31 @@
+redis-ha:
+  enabled: false
+dex:
+  enabled: false
+configs:
+  cm:
+    statusbadge.enabled: true
+  params:
+    server.insecure: true
+  rbac:
+    policy.csv: |
+      p, role:org-admin, applications, *, */*, allow
+      p, role:org-admin, applicationsets, *, */*, allow
+      p, role:org-admin, clusters, get, *, allow
+      p, role:org-admin, repositories, *, *, allow
+      p, role:org-admin, logs, get, *, allow
+      p, role:org-admin, exec, create, */*, allow
+      p, role:org-admin, projects, *, *, allow
+      g, team-platforms, role:org-admin
+  repositories:
+    argocd-mgmt:
+       url: ssh://git@github.com:der-ali/argocd-mgmt.git
+       type: git
+       sshPrivateKey: |
+        -----BEGIN OPENSSH PRIVATE KEY-----
+        b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+        QyNTUxOQAAACBLzw49p30fOfyZkojfnXzOI0sXeYwQKSKAfW5YU6Ph3QAAAJDB7/4cwe/+
+        HAAAAAtzc2gtZWQyNTUxOQAAACBLzw49p30fOfyZkojfnXzOI0sXeYwQKSKAfW5YU6Ph3Q
+        AAAECMBA+dGtjZSFr2WvE7qXfFWt0fNi07x0jwQaWwOKdkk0vPDj2nfR85/JmSiN+dfM4j
+        Sxd5jBApIoB9blhTo+HdAAAADWFyZ29jZEBnaXRodWI=
+        -----END OPENSSH PRIVATE KEY-----
