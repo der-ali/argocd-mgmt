@@ -15,10 +15,10 @@ spec:
       helm:
         valueFiles:
           - $values/values/argocd.yaml
-    - repoURL: argocd-mgmt
+    - repoURL: ssh://git@github.com/der-ali/argocd-mgmt.git
       targetRevision: HEAD
       ref: values
-    - repoURL: argocd-mgmt
+    - repoURL: ssh://git@github.com/der-ali/argocd-mgmt.git
       path: manifests/argocd/
   destination:
     name: in-cluster
