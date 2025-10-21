@@ -18,6 +18,8 @@ spec:
     - repoURL: ssh://git@github.com/der-ali/argocd-mgmt.git
       targetRevision: HEAD
       ref: values
+    - repoURL: ssh://git@github.com/der-ali/argocd-mgmt.git
+      path: manifests/argocd/
   destination:
     name: in-cluster
     namespace: argocd
