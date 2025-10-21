@@ -1,0 +1,19 @@
+---
+kind: AppProject
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: ic-nginx
+  namespace: argocd
+spec:
+  description: ic-nginx
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      name: ic-nginx
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
