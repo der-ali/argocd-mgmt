@@ -10,7 +10,9 @@ spec:
     - '*'
   destinations:
     - namespace: '*'
-      name: ic-nginx
+      name: dev-cluster
+    - namespace: '*'
+      name: prod-cluster
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
