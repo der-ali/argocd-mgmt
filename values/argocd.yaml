@@ -17,15 +17,3 @@ configs:
       p, role:org-admin, exec, create, */*, allow
       p, role:org-admin, projects, *, *, allow
       g, team-platforms, role:org-admin
-  repositories:
-    argocd-mgmt:
-       url: ssh://git@github.com:der-ali/argocd-mgmt.git
-       type: git
-       sshPrivateKey: |
-        -----BEGIN OPENSSH PRIVATE KEY-----
-        b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-        QyNTUxOQAAACBLzw49p30fOfyZkojfnXzOI0sXeYwQKSKAfW5YU6Ph3QAAAJDB7/4cwe/+
-        HAAAAAtzc2gtZWQyNTUxOQAAACBLzw49p30fOfyZkojfnXzOI0sXeYwQKSKAfW5YU6Ph3Q
-        AAAECMBA+dGtjZSFr2WvE7qXfFWt0fNi07x0jwQaWwOKdkk0vPDj2nfR85/JmSiN+dfM4j
-        Sxd5jBApIoB9blhTo+HdAAAADWFyZ29jZEBnaXRodWI=
-        -----END OPENSSH PRIVATE KEY-----
